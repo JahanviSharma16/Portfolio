@@ -74,47 +74,7 @@ function portfolioItemDetails(portfolioItem) {
   document.querySelector(".portfolio__popup-body").innerHTML =
     portfolioItem.querySelector(".portfolio__item-details").innerHTML;
 }
-/*=============== SERVICES MODAL ===============*/
 
-/*=============== ACHIEVEMENT SLIDER ===============*/
-const prevButton = document.querySelector(".prevButton");
-const nextButton = document.querySelector(".nextButton");
-
-prevButton.onclick = () => nextSlide(-1);
-nextButton.onclick = () => nextSlide(+1);
-
-let slideIndex = 1;
-
-showSlides(slideIndex);
-
-function nextSlide(n) {
-  showSlides((slideIndex += n));
-}
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-
-function showSlides(n) {
-  let i;
-  const slides = document.querySelectorAll(".imgScroll__slide");
-  const dots = document.querySelectorAll(".imgScroll__dot");
-
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace("active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
 /*=============== INPUT ANIMATION ===============*/
 const inputs = document.querySelectorAll(".input");
 function focusFunc() {
